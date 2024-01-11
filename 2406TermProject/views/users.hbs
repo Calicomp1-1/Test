@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style type="text/css">
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 50%;
+      background-color: #EEEEEE;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <div> 
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each userEntries}} 
+          <tr>
+            <td>{{this.userid}}</td>
+            <td>{{this.password}}</td>
+          </tr>
+        {{/each}} 
+      </tbody>
+    </table>
+  </div>
+   <input type="button" id="home_button" value="Back to Home" onclick="redirectToHome()">
+
+    <script>
+    function redirectToHome() {
+      window.location.href = 'http://localhost:3000';
+    }
+    </script>
+</body>
+</html>
